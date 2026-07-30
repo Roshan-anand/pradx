@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Instrument_Serif, Geist_Mono } from "next/font/google";
+import {
+  Geist_Mono,
+  Instrument_Sans,
+  Instrument_Serif,
+} from "next/font/google";
 import "./globals.css";
 import "./target_styles.css";
 import { cn } from "@/lib/utils";
@@ -59,22 +63,6 @@ export default function RootLayout({
         "font-sans",
       )}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var mode = localStorage.getItem('theme');
-                  if (mode === 'dark' || (!mode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark');
-                  }
-                } catch(e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

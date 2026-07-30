@@ -55,7 +55,7 @@
   --paper-deep: oklch(0.91 0.01 85);
   --ink: oklch(0.21 0 0);
   --graphite: oklch(0.27 0 0);
-  --muted-ink: oklch(0.60 0.01 85);
+  --muted-ink: oklch(0.6 0.01 85);
   --burgundy: oklch(0.32 0.12 15);
   --line: oklch(0.21 0 0 / 0.18);
   --line-inverse: oklch(0.95 0.008 85 / 0.22);
@@ -100,7 +100,7 @@
   --ink: oklch(0.92 0.005 85);
   --graphite: oklch(0.22 0.005 85);
   --muted-ink: oklch(0.55 0.01 85);
-  --burgundy: oklch(0.50 0.15 15);
+  --burgundy: oklch(0.5 0.15 15);
   --line: oklch(0.92 0 0 / 0.12);
   --line-inverse: oklch(0.14 0.005 85 / 0.22);
 
@@ -146,7 +146,6 @@
   }
   ::selection {
     background: var(--burgundy);
-    color: white;
     color: oklch(0.95 0.008 85);
   }
   :is(.dark *) ::selection {
