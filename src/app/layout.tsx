@@ -1,48 +1,63 @@
 import type { Metadata } from "next";
-import {
-  Geist_Mono,
-  Instrument_Sans,
-  Instrument_Serif,
-} from "next/font/google";
+import { DM_Serif_Display, Inter } from "next/font/google";
 import "./globals.css";
-import "./target_styles.css";
+import { BackToTop } from "@/components/back-to-top";
+import { JsonLd } from "@/components/json-ld";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { ORG_ID, PERSON_ID, WEBSITE_ID } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-const instrumentSans = Instrument_Sans({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-mono",
+const dmSerifDisplay = DM_Serif_Display({
   subsets: ["latin"],
+  variable: "--font-serif",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "PRADXCLUSIVE® — Independent Creative Company",
+  metadataBase: new URL("https://pradx.in"),
+  title: {
+    default: "PRADXCLUSIVE® | Brand Identity, Websites & Campaigns — India",
+    template: "%s | PRADXCLUSIVE®",
+  },
   description:
-    "PRADXCLUSIVE® is an independent creative company shaping identities, campaigns and visual worlds. Nothing ordinary leaves this house.",
-  applicationName: "PRADXCLUSIVE®",
+    "PRADXCLUSIVE is a founder-led creative studio based in India, working worldwide. Brand identity, websites, social content and campaigns — under one connected creative direction.",
+  keywords: [
+    "brand identity studio",
+    "creative agency India",
+    "brand design",
+    "website design",
+    "campaign creative",
+    "social content studio",
+    "PRADXCLUSIVE",
+  ],
+  authors: [{ name: "Pradyumna. M" }],
+  creator: "Pradyumna. M, PRADXCLUSIVE",
+  applicationName: "PRADXCLUSIVE",
   robots: "index, follow",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "PRADXCLUSIVE® — Independent Creative Company",
+    title: "PRADXCLUSIVE® | Nothing ordinary leaves this house.",
     description:
-      "Independent creative company shaping identities, campaigns and visual worlds.",
-    siteName: "PRADXCLUSIVE®",
+      "Brand identity, websites, social content and campaigns — under one connected creative direction. Founder-led creative studio, India — available worldwide.",
+    siteName: "PRADXCLUSIVE",
     type: "website",
+    url: "https://pradx.in/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PRADXCLUSIVE®",
-    description: "Nothing ordinary leaves this house.",
+    title: "PRADXCLUSIVE® | Nothing ordinary leaves this house.",
+    description:
+      "Brand identity, websites, social content and campaigns — under one connected creative direction.",
   },
+  // og:image / twitter:image and favicons are emitted by the file
+  // conventions (opengraph-image.tsx, icon.tsx, apple-icon.tsx).
 };
 
 export default function RootLayout({
@@ -57,13 +72,52 @@ export default function RootLayout({
       className={cn(
         "h-full",
         "antialiased",
-        instrumentSans.variable,
-        instrumentSerif.variable,
-        geistMono.variable,
+        inter.variable,
+        dmSerifDisplay.variable,
         "font-sans",
       )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": PERSON_ID,
+                name: "Pradyumna. M",
+                url: "https://pradx.in",
+                worksFor: { "@id": ORG_ID },
+              },
+              {
+                "@type": "Organization",
+                "@id": ORG_ID,
+                name: "PRADXCLUSIVE",
+                url: "https://pradx.in",
+                logo: "https://pradx.in/assets/pradxclusive-transparent-lockup.png",
+                email: "hello@pradxclusive.com",
+                founder: { "@id": PERSON_ID },
+                areaServed: "Worldwide",
+                address: {
+                  "@type": "PostalAddress",
+                  addressCountry: "IN",
+                },
+                slogan: "Nothing ordinary leaves this house.",
+              },
+              {
+                "@type": "WebSite",
+                "@id": WEBSITE_ID,
+                name: "PRADXCLUSIVE",
+                url: "https://pradx.in",
+                publisher: { "@id": ORG_ID },
+              },
+            ],
+          }}
+        />
+        {children}
+        <BackToTop />
+        <WhatsAppFloat />
+      </body>
     </html>
   );
 }

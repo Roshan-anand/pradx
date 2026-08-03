@@ -1,0 +1,18 @@
+# Architecture
+- Use Next.js Server Actions for form submission orchestration (call external services directly in-app), not n8n/webhooks or external queues. Confidence: 0.50
+- Prefer simple, hardcoded implementations for small static datasets (e.g., package names as literal strings in a select tag) over database tables or CMS-driven configuration — YAGNI. Confidence: 0.55
+- Prioritize business-notification emails (e.g., notifying Pradx of a new Lead) over end-user-facing emails (e.g., welcome email to Lead) — the notification is the critical path, welcome is secondary. Confidence: 0.80
+- When an integration carries high setup friction (e.g., WhatsApp Business API requires business verification, template approval), prefer substituting a simpler alternative that achieves the same user goal (e.g., static direct-chat link) rather than committing to the integration. Confidence: 0.65
+- For external service integrations, prefer the proper SDK/API approach (e.g., Google Sheets API via service account + `googleapis` SDK) over quick-to-wire workarounds (e.g., Apps Script web app), even if setup is heavier. Confidence: 0.45
+- Respond-first, process-later: when handling form submissions that chain external service calls, persist the core data immediately, return a response to the user, then fire external calls asynchronously afterward. Confidence: 0.40
+- Prefer synchronous execution for form submissions at current scale: complete all operations (sheet write, fallback, emails) before returning the response. Defer async/post-response patterns until volume demands it. Confidence: 0.65
+- Client-side form submission follows a fire-and-forget pattern: the client does not parse or act on the response payload — it just shows a generic confirmation toast (e.g., "we'll get in touch soon"). Confidence: 0.60
+- External service calls should use a +2 retry strategy (3 total attempts) before falling back or failing. Confidence: 0.65
+- Graceful degradation: critical data-persistence paths get a fallback store (e.g., Google Sheets → Postgres); non-critical notification paths fail silently with no fallback. Confidence: 0.75
+- Develop the API/backend layer first, keeping form data abstract and flexible so fields can be easily added/removed later. Do not design the UI/page until the API and operations are settled. Confidence: 0.65
+- For simple PostgreSQL needs (one table / a few queries), prefer the direct `pg` driver over an ORM such as Prisma. Confidence: 0.85
+- Keep database code (client, migrations, queries) in a dedicated folder (e.g., `src/db/`). Confidence: 0.80
+- Use a lightweight TypeScript migration script that executes raw table-creation SQL on startup, rather than dedicated migration tooling. Confidence: 0.75
+- Follow the "client islands" pattern in Next.js: everything is a server component by default; only interactive pieces (header/menu, scroll reveals, accordions, forms) are extracted into separate `"use client"` components. Confidence: 0.90
+- Centralize the design system in `globals.css` — extract the site's color palette and fonts from the design source into CSS/theme tokens (Tailwind v4 `@theme`) instead of scattering raw values through components. Confidence: 0.85
+- For marketing/landing pages, follow Next.js SEO and performance best practices: static prerendering, metadata API (title templates, OG/Twitter, canonical), `sitemap.ts`/`robots.ts`, JSON-LD structured data, `next/image`, and self-hosted fonts via `next/font`. Confidence: 0.80

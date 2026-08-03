@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(bun:*)",
+      "Shell(rm -rf prisma 2>/dev/null; echo \"done\")",
+      "Shell(ls -la PRADXCLUSIVE-BEFORE-REAL-WORKS-EXACT/images/ 2>&1; echo \"---\"; find PRADXCLUSIVE-BEFORE-REAL-WORKS-EXACT/images/ 2>&1 | head -40)",
+      "Shell(cd /home/roshan-anand/workspace/work/pradx && bun run build 2>&1 > /dev/null && curl -s file:///home/roshan-anand/workspace/work/pradx/.next/server/app/sitemap.xml/route.js 2>/dev/null || echo \"Checking generated output...\")"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}
