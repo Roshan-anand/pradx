@@ -5,7 +5,7 @@ export function WhatsAppFloat() {
     <a
       href={SITE.whatsapp}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       aria-label="Chat with PRADXCLUSIVE on WhatsApp"
       title="Chat on WhatsApp"
       className="group fixed right-6 bottom-6 z-[900] flex h-14 w-14 animate-glow-pulse items-center justify-center rounded-full bg-accent transition-transform duration-300 hover:scale-110 max-[900px]:right-5 max-[900px]:bottom-5"

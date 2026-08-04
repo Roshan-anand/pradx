@@ -4,6 +4,7 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
+export const alt = "PRADXCLUSIVE apple icon";
 
 export default async function AppleIcon() {
   const logo = await readFile(

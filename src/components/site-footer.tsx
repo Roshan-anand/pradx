@@ -44,7 +44,7 @@ export function SiteFooter() {
             <a
               href={SITE.whatsapp}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={linkClass}
             >
               WhatsApp
@@ -55,6 +55,37 @@ export function SiteFooter() {
             <Link href="/terms" className={linkClass}>
               Terms
             </Link>
+          </div>
+        </div>
+        <div>
+          <div className="mb-4 text-[11px] tracking-[0.2em] text-[#555555]">
+            SOCIAL
+          </div>
+          <div className="flex flex-col gap-3">
+            <a
+              href={SITE.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              Instagram
+            </a>
+            <a
+              href={SITE.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              LinkedIn
+            </a>
+            <a
+              href={SITE.social.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              X (Twitter)
+            </a>
           </div>
         </div>
       </div>

@@ -14,6 +14,11 @@ export const SITE = {
   logoAlt: "PRADXCLUSIVE — Purpose. Presence. Power.",
   year: "2026",
   projectType: "PRADXCLUSIVE ORIGINAL",
+  social: {
+    instagram: "https://instagram.com/pradxclusive",
+    linkedin: "https://linkedin.com/company/pradxclusive",
+    twitter: "https://x.com/pradxclusive",
+  } as const,
   navLinks: [
     { label: "Work", href: "/#work" },
     { label: "Services", href: "/#services" },

@@ -4,6 +4,7 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 512, height: 512 };
 export const contentType = "image/png";
+export const alt = "PRADXCLUSIVE icon";
 
 export default async function Icon() {
   const logo = await readFile(

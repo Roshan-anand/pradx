@@ -66,6 +66,9 @@ export default function Home() {
           isPartOf: { "@id": WEBSITE_ID },
           about: { "@id": ORG_ID },
           mainEntity: { "@id": ORG_ID },
+          name: "PRADXCLUSIVE® | Brand Identity & Creative Studio — India",
+          description:
+            "Founder-led creative studio in India — brand identity, websites, social content and campaigns under one connected creative direction.",
         }}
       />
       <SiteHeader />

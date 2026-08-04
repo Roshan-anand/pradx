@@ -23,11 +23,11 @@ const dmSerifDisplay = DM_Serif_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://pradxclusive.com"),
   title: {
-    default: "PRADXCLUSIVE® | Brand Identity, Websites & Campaigns — India",
+    default: "PRADXCLUSIVE® | Brand Identity & Creative Studio — India",
     template: "%s | PRADXCLUSIVE®",
   },
   description:
-    "PRADXCLUSIVE is a founder-led creative studio based in India, working worldwide. Brand identity, websites, social content and campaigns — under one connected creative direction.",
+    "Founder-led creative studio in India — brand identity, websites, social content and campaigns under one connected creative direction.",
   keywords: [
     "brand identity studio",
     "creative agency India",
@@ -43,18 +43,18 @@ export const metadata: Metadata = {
   robots: "index, follow",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "PRADXCLUSIVE® | Nothing ordinary leaves this house.",
+    title: "PRADXCLUSIVE® | Brand Identity & Creative Studio — India",
     description:
-      "Brand identity, websites, social content and campaigns — under one connected creative direction. Founder-led creative studio, India — available worldwide.",
+      "Founder-led creative studio in India — brand identity, websites, social content and campaigns under one connected creative direction.",
     siteName: "PRADXCLUSIVE",
     type: "website",
     url: "https://pradxclusive.com/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PRADXCLUSIVE® | Nothing ordinary leaves this house.",
+    title: "PRADXCLUSIVE® | Brand Identity & Creative Studio — India",
     description:
-      "Brand identity, websites, social content and campaigns — under one connected creative direction.",
+      "Founder-led creative studio in India — brand identity, websites, social content and campaigns under one connected creative direction.",
   },
   // og:image / twitter:image and favicons are emitted by the file
   // conventions (opengraph-image.tsx, icon.tsx, apple-icon.tsx).
@@ -103,6 +103,11 @@ export default function RootLayout({
                   addressCountry: "IN",
                 },
                 slogan: "Nothing ordinary leaves this house.",
+                sameAs: [
+                  "https://instagram.com/pradxclusive",
+                  "https://linkedin.com/company/pradxclusive",
+                  "https://x.com/pradxclusive",
+                ],
               },
               {
                 "@type": "WebSite",

@@ -44,7 +44,7 @@ export function Contact() {
             <a
               href={SITE.whatsapp}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-base text-accent transition-colors duration-300 hover:text-foreground"
             >
               Prefer to message directly?
