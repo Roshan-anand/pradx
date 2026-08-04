@@ -21,7 +21,7 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pradx.in"),
+  metadataBase: new URL("https://pradxclusive.com"),
   title: {
     default: "PRADXCLUSIVE® | Brand Identity, Websites & Campaigns — India",
     template: "%s | PRADXCLUSIVE®",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       "Brand identity, websites, social content and campaigns — under one connected creative direction. Founder-led creative studio, India — available worldwide.",
     siteName: "PRADXCLUSIVE",
     type: "website",
-    url: "https://pradx.in/",
+    url: "https://pradxclusive.com/",
   },
   twitter: {
     card: "summary_large_image",
@@ -86,15 +86,15 @@ export default function RootLayout({
                 "@type": "Person",
                 "@id": PERSON_ID,
                 name: "Pradyumna. M",
-                url: "https://pradx.in",
+                url: "https://pradxclusive.com",
                 worksFor: { "@id": ORG_ID },
               },
               {
                 "@type": "Organization",
                 "@id": ORG_ID,
                 name: "PRADXCLUSIVE",
-                url: "https://pradx.in",
-                logo: "https://pradx.in/assets/pradxclusive-transparent-lockup.png",
+                url: "https://pradxclusive.com",
+                logo: "https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png",
                 email: "hello@pradxclusive.com",
                 founder: { "@id": PERSON_ID },
                 areaServed: "Worldwide",
@@ -108,7 +108,7 @@ export default function RootLayout({
                 "@type": "WebSite",
                 "@id": WEBSITE_ID,
                 name: "PRADXCLUSIVE",
-                url: "https://pradx.in",
+                url: "https://pradxclusive.com",
                 publisher: { "@id": ORG_ID },
               },
             ],

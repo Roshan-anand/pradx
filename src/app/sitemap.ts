@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/lib/site";
 
-const BASE_URL = "https://pradx.in";
+const BASE_URL = "https://pradxclusive.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

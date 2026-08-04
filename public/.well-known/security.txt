@@ -1,3 +1,3 @@
-Canonical: https://pradx.in/.well-known/security.txt
+Canonical: https://pradxclusive.com/.well-known/security.txt
 Contact: mailto:hello@pradxclusive.com
 Expires: 2027-12-31T00:00:00.000Z

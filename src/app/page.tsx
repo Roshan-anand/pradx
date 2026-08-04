@@ -61,8 +61,8 @@ export default function Home() {
         data={{
           "@context": "https://schema.org",
           "@type": "ProfilePage",
-          "@id": "https://pradx.in/#webpage",
-          url: "https://pradx.in",
+          "@id": "https://pradxclusive.com/#webpage",
+          url: "https://pradxclusive.com",
           isPartOf: { "@id": WEBSITE_ID },
           about: { "@id": ORG_ID },
           mainEntity: { "@id": ORG_ID },

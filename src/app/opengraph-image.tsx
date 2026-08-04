@@ -111,7 +111,7 @@ export default async function OpenGraphImage() {
         }}
       >
         <span>Founder-led creative studio</span>
-        <span>pradx.in</span>
+        <span>pradxclusive.com</span>
       </div>
     </div>,
     size,

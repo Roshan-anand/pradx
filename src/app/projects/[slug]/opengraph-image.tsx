@@ -129,7 +129,7 @@ export default async function ProjectOpenGraphImage({
         }}
       >
         <span>Self-directed brand world</span>
-        <span>pradx.in</span>
+        <span>pradxclusive.com</span>
       </div>
     </div>,
     size,

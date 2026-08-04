@@ -16,15 +16,15 @@ export const metadata: Metadata = {
       "Terms of service for PRADXCLUSIVE — engagement scope and policies.",
     siteName: "PRADXCLUSIVE",
     type: "website",
-    url: "https://pradx.in/terms",
-    images: ["https://pradx.in/assets/pradxclusive-transparent-lockup.png"],
+    url: "https://pradxclusive.com/terms",
+    images: ["https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Terms of Service | PRADXCLUSIVE®",
     description:
       "Terms of service for PRADXCLUSIVE — engagement scope and policies.",
-    images: ["https://pradx.in/assets/pradxclusive-transparent-lockup.png"],
+    images: ["https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png"],
   },
 };
 
@@ -40,7 +40,7 @@ export default function TermsPage() {
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://pradx.in",
+              item: "https://pradxclusive.com",
             },
             {
               "@type": "ListItem",

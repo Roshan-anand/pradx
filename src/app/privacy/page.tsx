@@ -16,15 +16,15 @@ export const metadata: Metadata = {
       "How PRADXCLUSIVE collects, uses, and protects your information.",
     siteName: "PRADXCLUSIVE",
     type: "website",
-    url: "https://pradx.in/privacy",
-    images: ["https://pradx.in/assets/pradxclusive-transparent-lockup.png"],
+    url: "https://pradxclusive.com/privacy",
+    images: ["https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy | PRADXCLUSIVE®",
     description:
       "How PRADXCLUSIVE collects, uses, and protects your information.",
-    images: ["https://pradx.in/assets/pradxclusive-transparent-lockup.png"],
+    images: ["https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png"],
   },
 };
 
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://pradx.in",
+              item: "https://pradxclusive.com",
             },
             {
               "@type": "ListItem",

@@ -1,6 +1,6 @@
-export const PERSON_ID = "https://pradx.in/#person";
-export const ORG_ID = "https://pradx.in/#organization";
-export const WEBSITE_ID = "https://pradx.in/#website";
+export const PERSON_ID = "https://pradxclusive.com/#person";
+export const ORG_ID = "https://pradxclusive.com/#organization";
+export const WEBSITE_ID = "https://pradxclusive.com/#website";
 
 export const SITE = {
   name: "PRADXCLUSIVE",

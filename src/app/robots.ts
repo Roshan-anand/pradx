@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://pradx.in/sitemap.xml",
+    sitemap: "https://pradxclusive.com/sitemap.xml",
   };
 }
