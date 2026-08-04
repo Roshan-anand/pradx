@@ -9,7 +9,7 @@ import { Studio } from "@/components/sections/studio";
 import { Work } from "@/components/sections/work";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { ORG_ID, PERSON_ID, WEBSITE_ID } from "@/lib/site";
+import { ORG_ID, WEBSITE_ID } from "@/lib/site";
 
 const FAQ_ITEMS: FaqItem[] = [
   {

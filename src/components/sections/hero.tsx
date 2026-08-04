@@ -1,14 +1,30 @@
 export function Hero() {
   return (
     <section id="top" className="relative h-screen overflow-hidden">
+      {/* Poster renders instantly as the LCP background while the video boots,
+          and doubles as the placeholder before the video is requested. */}
+      {/* biome-ignore lint/performance/noImgElement: plain <img> poster — next/image can't serve a video poster */}
+      <img
+        src="/assets/pradxclusive-hero-poster.webp"
+        alt=""
+        aria-hidden="true"
+        width={1080}
+        height={1920}
+        decoding="async"
+        fetchPriority="high"
+        className="absolute top-0 left-0 h-full w-full bg-background object-cover"
+      />
       <video
         autoPlay
         muted
         loop
         playsInline
+        preload="none"
+        poster="/assets/pradxclusive-hero-poster.webp"
         className="absolute top-0 left-0 h-full w-full bg-background object-cover"
       >
         <source src="/video/pradxclusive-hero-mobile.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.7)_0%,rgba(10,10,10,0.35)_55%,rgba(10,10,10,0.75)_100%)]" />
       <div className="absolute top-28 left-10 z-[2] text-[11px] leading-[1.8] tracking-[0.2em] text-label max-[600px]:left-6">

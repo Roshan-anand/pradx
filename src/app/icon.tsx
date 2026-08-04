@@ -8,7 +8,10 @@ export const alt = "PRADXCLUSIVE icon";
 
 export default async function Icon() {
   const logo = await readFile(
-    join(process.cwd(), "public/assets/PRADXCLUSIVE_PRIMARY_LOGO_EMERALD.png"),
+    join(
+      process.cwd(),
+      "public/assets/pradxclusive-transparent-lockup-192.png",
+    ),
   );
   const logoDataUri = `data:image/png;base64,${logo.toString("base64")}`;
 
@@ -27,8 +30,8 @@ export default async function Icon() {
       <img
         src={logoDataUri}
         alt=""
-        width={440}
-        height={418}
+        width={256}
+        height={243}
         style={{ objectFit: "contain" }}
       />
     </div>,

@@ -98,7 +98,7 @@ export function Services() {
                 ))}
               </ul>
               {service.note && (
-                <p className="mt-5 text-[13px] italic text-[#555555]">
+                <p className="mt-5 text-[13px] italic text-label">
                   {service.note}
                 </p>
               )}

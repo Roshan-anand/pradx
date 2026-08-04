@@ -42,6 +42,8 @@ export function Studio() {
             width={1080}
             height={1440}
             sizes="(max-width: 900px) 100vw, 40vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVABADASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABQACBP/EACYQAAIBAwIFBQEAAAAAAAAAAAECAwAEESExBRITIkEGFCNRYcH/xAAVAQEBAAAAAAAAAAAAAAAAAAAEA//EABoRAAEFAQAAAAAAAAAAAAAAAAABAgMRIRL/2gAMAwEAAhEDEQA/AEOHW9pHa9SNkEaLzM7aEDfWuwzRNZvcWjGVVGfi7uY/QomDiuLJbb26gvlFZWJ0OxJP7mtS3Fzw6GW2s4oBdFudzg9xOxHjwN6M2Ny6I6wJEhEg01MzDP4DgUh6xjaOfrRuVKQhyPvDY/tVVKukJn//2Q=="
             className="aspect-[3/4] w-full rounded object-cover object-top grayscale-[15%] contrast-[1.05]"
           />
           <div className="mt-5 font-sans text-lg font-semibold text-foreground">

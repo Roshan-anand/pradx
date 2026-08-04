@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { SiteHeader } from "@/components/site-header";
-import { SITE, WEBSITE_ID } from "@/lib/site";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -17,14 +17,18 @@ export const metadata: Metadata = {
     siteName: "PRADXCLUSIVE",
     type: "website",
     url: "https://pradxclusive.com/privacy",
-    images: ["https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png"],
+    images: [
+      "https://pradxclusive.com/assets/pradxclusive-transparent-lockup-640.png",
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy | PRADXCLUSIVE®",
     description:
       "How PRADXCLUSIVE collects, uses, and protects your information.",
-    images: ["https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png"],
+    images: [
+      "https://pradxclusive.com/assets/pradxclusive-transparent-lockup-640.png",
+    ],
   },
 };
 
@@ -101,7 +105,7 @@ export default function PrivacyPage() {
         </p>
       </main>
       <footer className="border-t border-border bg-background p-10 text-center">
-        <p className="text-xs text-[#555555]">
+        <p className="text-xs text-label">
           © {SITE.year} PRADXCLUSIVE® — <Link href="/#top">Back to home</Link>
         </p>
       </footer>

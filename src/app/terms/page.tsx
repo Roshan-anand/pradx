@@ -17,14 +17,18 @@ export const metadata: Metadata = {
     siteName: "PRADXCLUSIVE",
     type: "website",
     url: "https://pradxclusive.com/terms",
-    images: ["https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png"],
+    images: [
+      "https://pradxclusive.com/assets/pradxclusive-transparent-lockup-640.png",
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Terms of Service | PRADXCLUSIVE®",
     description:
       "Terms of service for PRADXCLUSIVE — engagement scope and policies.",
-    images: ["https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png"],
+    images: [
+      "https://pradxclusive.com/assets/pradxclusive-transparent-lockup-640.png",
+    ],
   },
 };
 
@@ -109,7 +113,7 @@ export default function TermsPage() {
         </p>
       </main>
       <footer className="border-t border-border bg-background p-10 text-center">
-        <p className="text-xs text-[#555555]">
+        <p className="text-xs text-label">
           © {SITE.year} PRADXCLUSIVE® — <Link href="/#top">Back to home</Link>
         </p>
       </footer>

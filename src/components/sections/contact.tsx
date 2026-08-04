@@ -57,7 +57,7 @@ export function Contact() {
             <div className="text-base text-foreground">{SITE.location}</div>
           </div>
           <div className="my-10 border-t border-border" />
-          <p className="text-[13px] leading-[1.6] text-[#555555]">
+          <p className="text-[13px] leading-[1.6] text-label">
             PRADXCLUSIVE responds to every serious enquiry. Typical response
             within 24 hours.
           </p>

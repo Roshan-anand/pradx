@@ -3,6 +3,12 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactCompiler: true,
 
+  images: {
+    // Serve AVIF/WebP instead of the source PNG where the browser supports it
+    // (header lockup, founder photo, portfolio art) — smaller bytes, same look.
+    formats: ["image/avif", "image/webp"],
+  },
+
   async headers() {
     return [
       {

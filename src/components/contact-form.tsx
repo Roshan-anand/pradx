@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { SITE } from "@/lib/site";
 
 const INDUSTRIES = [
@@ -49,6 +49,7 @@ function SelectField({
   onChange,
   required,
   placeholder,
+  label,
   options,
 }: {
   name: string;
@@ -56,26 +57,34 @@ function SelectField({
   onChange: (name: string, value: string) => void;
   required?: boolean;
   placeholder: string;
+  label: string;
   options: readonly string[];
 }) {
   const isPlaceholder = value === "";
+  const id = useId();
   return (
-    <select
-      name={name}
-      required={required}
-      value={value}
-      onChange={(event) => onChange(name, event.target.value)}
-      className={`${selectClass} ${
-        isPlaceholder ? "text-[#555555]" : "text-foreground"
-      }`}
-    >
-      <option value="" disabled>
-        {placeholder}
-      </option>
-      {options.map((option) => (
-        <option key={option}>{option}</option>
-      ))}
-    </select>
+    <div>
+      <label htmlFor={id} className="sr-only">
+        {label}
+      </label>
+      <select
+        id={id}
+        name={name}
+        required={required}
+        value={value}
+        onChange={(event) => onChange(name, event.target.value)}
+        className={`${selectClass} ${
+          isPlaceholder ? "text-[#555555]" : "text-foreground"
+        }`}
+      >
+        <option value="" disabled>
+          {placeholder}
+        </option>
+        {options.map((option) => (
+          <option key={option}>{option}</option>
+        ))}
+      </select>
+    </div>
   );
 }
 
@@ -143,6 +152,7 @@ export function ContactForm() {
         value={values.industry ?? ""}
         onChange={handleFieldChange}
         placeholder="Choose your industry"
+        label="Choose your industry"
         options={INDUSTRIES}
       />
       <SelectField
@@ -151,6 +161,7 @@ export function ContactForm() {
         value={values.service ?? ""}
         onChange={handleFieldChange}
         placeholder="Choose a starting point"
+        label="Choose a starting point"
         options={SERVICES}
       />
       <SelectField
@@ -158,6 +169,7 @@ export function ContactForm() {
         value={values.budget ?? ""}
         onChange={handleFieldChange}
         placeholder="choose your budget range"
+        label="Choose your budget range"
         options={BUDGETS}
       />
       <textarea

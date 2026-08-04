@@ -22,7 +22,7 @@ export function SiteFooter() {
           </p>
         </div>
         <div>
-          <div className="mb-4 text-[11px] tracking-[0.2em] text-[#555555]">
+          <div className="mb-4 text-[11px] tracking-[0.2em] text-label">
             NAVIGATION
           </div>
           <div className="flex flex-col gap-3">
@@ -34,7 +34,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div>
-          <div className="mb-4 text-[11px] tracking-[0.2em] text-[#555555]">
+          <div className="mb-4 text-[11px] tracking-[0.2em] text-label">
             CONTACT
           </div>
           <div className="flex flex-col gap-3">
@@ -58,7 +58,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div>
-          <div className="mb-4 text-[11px] tracking-[0.2em] text-[#555555]">
+          <div className="mb-4 text-[11px] tracking-[0.2em] text-label">
             SOCIAL
           </div>
           <div className="flex flex-col gap-3">
@@ -90,10 +90,8 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-6">
-        <span className="text-xs text-[#555555]">
-          © {SITE.year} PRADXCLUSIVE®
-        </span>
-        <span className="text-xs italic text-[#555555]">{SITE.motto}</span>
+        <span className="text-xs text-label">© {SITE.year} PRADXCLUSIVE®</span>
+        <span className="text-xs italic text-label">{SITE.motto}</span>
       </div>
     </footer>
   );

@@ -94,7 +94,7 @@ export default function RootLayout({
                 "@id": ORG_ID,
                 name: "PRADXCLUSIVE",
                 url: "https://pradxclusive.com",
-                logo: "https://pradxclusive.com/assets/pradxclusive-transparent-lockup.png",
+                logo: "https://pradxclusive.com/assets/pradxclusive-transparent-lockup-640.png",
                 email: "hello@pradxclusive.com",
                 founder: { "@id": PERSON_ID },
                 areaServed: "Worldwide",

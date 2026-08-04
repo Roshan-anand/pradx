@@ -8,7 +8,10 @@ export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
   const lockup = await readFile(
-    join(process.cwd(), "public/assets/pradxclusive-transparent-lockup.png"),
+    join(
+      process.cwd(),
+      "public/assets/pradxclusive-transparent-lockup-192.png",
+    ),
   );
   const lockupDataUri = `data:image/png;base64,${lockup.toString("base64")}`;
 

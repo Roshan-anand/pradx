@@ -12,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#0a0a0a",
     icons: [
       {
-        src: "/assets/PRADXCLUSIVE_PRIMARY_LOGO_EMERALD.png",
+        src: "/assets/pradxclusive-transparent-lockup-640.png",
         sizes: "512x512",
         type: "image/png",
       },

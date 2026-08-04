@@ -27,6 +27,7 @@ export function SiteHeader({
   }, []);
 
   useEffect(() => {
+    if (!menuOpen) return;
     const sections = SECTION_IDS.map((id) =>
       document.getElementById(id),
     ).filter((element): element is HTMLElement => element !== null);
@@ -40,8 +41,11 @@ export function SiteHeader({
       { threshold: 0.4 },
     );
     for (const section of sections) observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      observer.disconnect();
+      setActiveSection(null);
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -74,7 +78,7 @@ export function SiteHeader({
             className="relative block h-10 w-[84px] overflow-hidden max-[900px]:h-[30px] max-[900px]:w-[60px] max-[600px]:h-[26px] max-[600px]:w-[52px]"
           >
             <Image
-              src={SITE.logo}
+              src={SITE.logoMark}
               alt=""
               width={84}
               height={58}
@@ -87,6 +91,7 @@ export function SiteHeader({
               alt={SITE.logoAlt}
               width={250}
               height={172}
+              sizes="(max-width: 600px) 175px, (max-width: 900px) 200px, 250px"
               className="absolute bottom-0 left-0 h-auto w-[250px] max-w-none max-[900px]:w-[200px] max-[600px]:w-[175px]"
             />
           </span>

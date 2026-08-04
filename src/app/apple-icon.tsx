@@ -8,7 +8,10 @@ export const alt = "PRADXCLUSIVE apple icon";
 
 export default async function AppleIcon() {
   const logo = await readFile(
-    join(process.cwd(), "public/assets/PRADXCLUSIVE_PRIMARY_LOGO_EMERALD.png"),
+    join(
+      process.cwd(),
+      "public/assets/pradxclusive-transparent-lockup-192.png",
+    ),
   );
   const logoDataUri = `data:image/png;base64,${logo.toString("base64")}`;
 
@@ -27,8 +30,8 @@ export default async function AppleIcon() {
       <img
         src={logoDataUri}
         alt=""
-        width={150}
-        height={142}
+        width={128}
+        height={122}
         style={{ objectFit: "contain" }}
       />
     </div>,
