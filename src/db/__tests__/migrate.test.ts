@@ -17,8 +17,7 @@ describe("migrate", () => {
       expect(sql).toContain("email");
       expect(sql).toContain("company");
       expect(sql).toContain("industry");
-      expect(sql).toContain("service");
-      expect(sql).toContain("budget");
+      expect(sql).toContain("starting_point");
       expect(sql).toContain("brief");
       expect(sql).toContain("created_at");
     } finally {

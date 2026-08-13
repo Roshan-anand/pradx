@@ -36,8 +36,7 @@ describe("google-sheets", () => {
     email: "john@example.com",
     company: "Acme Corp",
     industry: "Technology and Professional Services",
-    service: "Brand strategy and identity",
-    budget: "₹3–7 lakh",
+    "starting-point": "Brand strategy and identity",
     brief: "Need a full identity system.",
   };
 
@@ -47,13 +46,14 @@ describe("google-sheets", () => {
     expect(mockAppend).toHaveBeenCalledTimes(1);
     const callArgs = mockAppend.mock.calls[0][0];
     expect(callArgs.spreadsheetId).toBe("test-sheet-id");
-    expect(callArgs.range).toBe("Sheet1!A:H");
+    expect(callArgs.range).toBe("Sheet1!A:G");
     expect(callArgs.valueInputOption).toBe("RAW");
-    expect(callArgs.requestBody.values[0].length).toBe(8);
+    expect(callArgs.requestBody.values[0].length).toBe(7);
     expect(callArgs.requestBody.values[0][1]).toBe("John Doe");
     expect(callArgs.requestBody.values[0][2]).toBe("john@example.com");
     expect(callArgs.requestBody.values[0][3]).toBe("Acme Corp");
-    expect(callArgs.requestBody.values[0][7]).toBe(
+    expect(callArgs.requestBody.values[0][5]).toBe("Brand strategy and identity");
+    expect(callArgs.requestBody.values[0][6]).toBe(
       "Need a full identity system.",
     );
   });

@@ -54,7 +54,7 @@ export default function PrivacyPage() {
           ],
         }}
       />
-      <SiteHeader solid minimal />
+      <SiteHeader solid />
       <main className="mx-auto max-w-[800px] px-10 py-[100px] max-[600px]:px-6 max-[600px]:py-16">
         <div className="mb-4 text-[11px] tracking-[0.2em] text-label">
           LEGAL
@@ -72,9 +72,9 @@ export default function PrivacyPage() {
         </h2>
         <p className="mb-4 text-[15px] text-label">
           When you submit the project enquiry form, we collect the details you
-          provide — your name, email address, company name, industry, service
-          interest, budget range and project brief. We do not collect payment
-          information through this website.
+          provide — your name, email address, company name, industry, starting
+          point and project brief. We do not collect payment information through
+          this website.
         </p>
 
         <h2 className="mt-10 mb-3 font-sans text-lg font-semibold">

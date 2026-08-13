@@ -1,68 +1,91 @@
-import { ContactForm } from "@/components/contact-form";
-import { FadeUp } from "@/components/fade-up";
+import { SubmitForm } from "@/components/submit-form";
 import { SITE } from "@/lib/site";
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="px-10 py-[120px] max-[900px]:px-6 max-[900px]:py-20"
-    >
-      <FadeUp>
-        <div className="mb-4 text-[11px] tracking-[0.2em] text-label">
-          START A PROJECT
-        </div>
-        <h2 className="mb-3 text-[clamp(32px,4vw,56px)] text-foreground">
-          What are you building next?
+    <section id="contact" className="contact-section">
+      <div className="contact-intro">
+        <span className="eyebrow">Start a project</span>
+        <h2>
+          What are you
+          <br />
+          <em>building next?</em>
         </h2>
-        <p className="mb-16 text-[15px] text-label">
-          Direct communication. Clear scope. Thoughtful creative direction.
-        </p>
-      </FadeUp>
-
-      <div className="grid grid-cols-[60%_40%] max-[900px]:grid-cols-1 max-[900px]:gap-12">
-        <FadeUp>
-          <ContactForm />
-        </FadeUp>
-
-        <FadeUp className="pl-[60px] max-[900px]:pt-10 max-[900px]:pl-0">
-          <div className="mb-10">
-            <div className="mb-2 text-[11px] tracking-[0.2em] text-label">
-              EMAIL
-            </div>
-            <a
-              href={`mailto:${SITE.email}`}
-              className="text-base text-foreground transition-colors duration-300 hover:text-accent"
-            >
-              {SITE.email}
-            </a>
-          </div>
-          <div className="mb-10">
-            <div className="mb-2 text-[11px] tracking-[0.2em] text-label">
-              WHATSAPP
-            </div>
-            <a
-              href={SITE.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base text-accent transition-colors duration-300 hover:text-foreground"
-            >
-              Prefer to message directly?
-            </a>
-          </div>
-          <div className="mb-10">
-            <div className="mb-2 text-[11px] tracking-[0.2em] text-label">
-              LOCATION
-            </div>
-            <div className="text-base text-foreground">{SITE.location}</div>
-          </div>
-          <div className="my-10 border-t border-border" />
-          <p className="text-[13px] leading-[1.6] text-label">
-            PRADXCLUSIVE responds to every serious enquiry. Typical response
-            within 24 hours.
-          </p>
-        </FadeUp>
+        <p>Direct communication. Clear scope. Thoughtful creative direction.</p>
+        <div className="direct-contact">
+          <span>Email</span>
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <span>WhatsApp</span>
+          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">
+            Prefer to message directly?
+          </a>
+          <span>Location</span>
+          <p>{SITE.location}</p>
+        </div>
       </div>
+
+      <SubmitForm
+        name="project-enquiry"
+        className="project-form"
+        successTitle="Project brief received."
+        successCopy="Thank you. We'll review the brief and contact you with a clear next step."
+        submitLabel="Send project brief"
+      >
+        <label>
+          <span>Your name</span>
+          <input name="name" required autoComplete="name" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required autoComplete="email" />
+        </label>
+        <label>
+          <span>Brand or company</span>
+          <input name="company" required />
+        </label>
+        <label>
+          <span>Industry</span>
+          <select name="industry" required defaultValue="">
+            <option value="" disabled>
+              Choose your industry
+            </option>
+            <option>FMCG and Consumer Brands</option>
+            <option>E-commerce and Retail</option>
+            <option>Fashion and Lifestyle</option>
+            <option>Real Estate and Interiors</option>
+            <option>Education and Institutions</option>
+            <option>Healthcare and Wellness</option>
+            <option>Hospitality and Food</option>
+            <option>Technology and Professional Services</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>
+          <span>Starting point</span>
+          <select name="starting-point" required defaultValue="">
+            <option value="" disabled>
+              Choose a starting point
+            </option>
+            <option>Brand strategy and identity</option>
+            <option>Packaging</option>
+            <option>Website or digital experience</option>
+            <option>Campaign or launch</option>
+            <option>Social presence and management</option>
+            <option>Motion or creative production</option>
+            <option>Ongoing creative partnership</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <label className="wide">
+          <span>Project brief</span>
+          <textarea
+            name="brief"
+            rows={5}
+            required
+            placeholder="Tell us what you are building, the challenge and your expected timeline."
+          />
+        </label>
+      </SubmitForm>
     </section>
   );
 }

@@ -3,7 +3,6 @@ export interface LeadData {
   email: string;
   company?: string;
   industry: string;
-  service: string;
-  budget?: string;
+  "starting-point": string;
   brief: string;
 }

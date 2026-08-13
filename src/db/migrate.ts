@@ -6,10 +6,9 @@ const CREATE_TABLE_SQL = `
     name       TEXT NOT NULL,
     email      TEXT NOT NULL,
     company    TEXT,
-    industry   TEXT NOT NULL,
-    service    TEXT NOT NULL,
-    budget     TEXT,
-    brief      TEXT NOT NULL,
+    industry       TEXT NOT NULL,
+    starting_point TEXT NOT NULL,
+    brief          TEXT NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
   );
 `;

@@ -27,7 +27,7 @@ describe("email", () => {
         email: "john@example.com",
         company: "Acme Corp",
         industry: "Technology",
-        service: "Brand strategy and identity",
+        "starting-point": "Brand strategy and identity",
         brief: "Need a full identity system.",
       });
 
@@ -62,8 +62,7 @@ describe("email", () => {
         email: "jane@example.com",
         company: "Beta Inc",
         industry: "Fashion and Lifestyle",
-        service: "Campaign or launch",
-        budget: "₹1–3 lakh",
+        "starting-point": "Campaign or launch",
         brief: "Launch campaign for a new collection.",
       });
 
@@ -97,7 +96,7 @@ describe("email", () => {
           name: "John",
           email: "john@example.com",
           industry: "Other",
-          service: "Not sure yet",
+          "starting-point": "Not sure yet",
           brief: "Exploring options.",
         }),
       ).resolves.toBeUndefined();

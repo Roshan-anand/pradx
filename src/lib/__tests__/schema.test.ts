@@ -7,8 +7,7 @@ describe("leadInquirySchema", () => {
     email: "john@example.com",
     company: "Acme Corp",
     industry: "Technology and Professional Services",
-    service: "Brand strategy and identity",
-    budget: "₹3–7 lakh",
+    "starting-point": "Brand strategy and identity",
     brief: "We are building a new brand and need a full identity system.",
   };
 
@@ -20,7 +19,7 @@ describe("leadInquirySchema", () => {
       expect(result.data.email).toBe("john@example.com");
       expect(result.data.company).toBe("Acme Corp");
       expect(result.data.industry).toBe("Technology and Professional Services");
-      expect(result.data.service).toBe("Brand strategy and identity");
+      expect(result.data["starting-point"]).toBe("Brand strategy and identity");
       expect(result.data.brief).toBe(
         "We are building a new brand and need a full identity system.",
       );
@@ -65,13 +64,13 @@ describe("leadInquirySchema", () => {
     }
   });
 
-  it("missing service fails", () => {
-    const { service: _, ...rest } = validData;
+  it("missing starting point fails", () => {
+    const { "starting-point": _, ...rest } = validData;
     const result = leadInquirySchema.safeParse(rest);
     expect(result.success).toBe(false);
     if (!result.success) {
       const issue = result.error.issues.find(
-        (i) => i.path.join(".") === "service",
+        (i) => i.path.join(".") === "starting-point",
       );
       expect(issue).toBeDefined();
     }
@@ -94,13 +93,12 @@ describe("leadInquirySchema", () => {
       name: validData.name,
       email: validData.email,
       industry: validData.industry,
-      service: validData.service,
+      "starting-point": validData["starting-point"],
       brief: validData.brief,
     });
     expect(result.success).toBe(true);
     if (result.success) {
       expect(result.data.company).toBeUndefined();
-      expect(result.data.budget).toBeUndefined();
     }
   });
 
@@ -108,12 +106,10 @@ describe("leadInquirySchema", () => {
     const result = leadInquirySchema.safeParse({
       ...validData,
       company: "",
-      budget: "",
     });
     expect(result.success).toBe(true);
     if (result.success) {
       expect(result.data.company).toBeUndefined();
-      expect(result.data.budget).toBeUndefined();
     }
   });
 });

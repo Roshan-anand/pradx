@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/lib/site";
+import { projects } from "@/lib/projects";
 
 const BASE_URL = "https://pradxclusive.com";
 
@@ -10,6 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: `${BASE_URL}/audit`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     ...projects.map((project) => ({
       url: `${BASE_URL}/projects/${project.slug}`,

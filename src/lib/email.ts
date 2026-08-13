@@ -30,8 +30,7 @@ export async function sendNotificationEmail(lead: LeadData): Promise<void> {
       <tr><td><strong>Email</strong></td><td>${lead.email}</td></tr>
       ${lead.company ? `<tr><td><strong>Company</strong></td><td>${lead.company}</td></tr>` : ""}
       <tr><td><strong>Industry</strong></td><td>${lead.industry}</td></tr>
-      <tr><td><strong>Service</strong></td><td>${lead.service}</td></tr>
-      ${lead.budget ? `<tr><td><strong>Budget</strong></td><td>${lead.budget}</td></tr>` : ""}
+      <tr><td><strong>Starting point</strong></td><td>${lead["starting-point"]}</td></tr>
       <tr><td><strong>Brief</strong></td><td>${lead.brief}</td></tr>
     </table>
   `;

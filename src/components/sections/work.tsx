@@ -1,75 +1,58 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FadeUp } from "@/components/fade-up";
-import { projects } from "@/lib/site";
+import { projects } from "@/lib/projects";
 
 export function Work() {
   return (
-    <section
-      id="work"
-      className="px-10 py-[120px] max-[900px]:px-6 max-[900px]:py-20"
-    >
+    <section id="work" className="work-section">
       <FadeUp>
-        <div className="mb-4 text-[11px] tracking-[0.2em] text-label">
-          SELECTED WORK
+        <div className="section-heading">
+          <span className="eyebrow">Selected work</span>
+          <h2>Selected work. Built to matter.</h2>
+          <p>
+            Identity, digital, packaging and campaign work shaped around one
+            thing: making ambitious businesses clearer, stronger and harder to
+            overlook.
+          </p>
         </div>
-        <h2 className="mb-4 text-[clamp(32px,4vw,56px)] text-foreground">
-          Built to be remembered.
-        </h2>
-        <p className="mb-16 text-[15px] italic text-label">
-          Founding portfolio — eight self-directed brand worlds built to
-          establish the studio&rsquo;s standard of work.
-        </p>
       </FadeUp>
 
-      <div className="grid grid-cols-2 gap-0.5 max-[900px]:grid-cols-1">
+      <div className="project-grid">
         {projects.map((project) => (
           <FadeUp key={project.slug}>
-            <Link
-              href={`/projects/${project.slug}`}
-              className="group relative block overflow-hidden"
-            >
-              <div className="overflow-hidden rounded">
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={project.heroImage}
-                    alt={project.imageAlt}
-                    fill
-                    sizes="(max-width: 900px) 100vw, 50vw"
-                    className="rounded object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.03]"
-                  />
-                </div>
+            <Link className="project-card" href={`/projects/${project.slug}`}>
+              <div
+                className={`project-image${
+                  project.coverFit === "contain"
+                    ? " project-image--contain"
+                    : ""
+                }`}
+              >
+                {/* biome-ignore lint/performance/noImgElement: project cover art — plain img keeps the exact supplied asset */}
+                <img
+                  src={project.cover}
+                  alt={`${project.title} — ${project.category} project`}
+                  loading={project.number === "01" ? "eager" : "lazy"}
+                />
+                <span className="project-number">{project.number}</span>
               </div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-[rgba(10,10,10,0.7)] text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="font-sans text-xl font-bold text-white">
-                  {project.name}
+              <div className="project-card-copy">
+                <div>
+                  <span className="card-category">{project.category}</span>
+                  <h3>{project.title}</h3>
                 </div>
-                <div className="mt-2 text-[13px] text-label">
-                  {project.disciplines}
-                </div>
-              </div>
-              <div className="py-5">
-                <div className="font-sans text-base font-medium text-foreground">
-                  {project.name}
-                </div>
-                <div className="mt-1 text-[13px] text-label">
-                  {project.summary}
-                </div>
+                <p>{project.description}</p>
+                <span className="text-link">View project ↗</span>
               </div>
             </Link>
           </FadeUp>
         ))}
       </div>
 
-      <FadeUp className="pt-20 text-center">
-        <p className="text-base text-label">
-          Working on something that needs to be remembered?
-        </p>
-        <a
-          href="#contact"
-          className="font-semibold text-accent transition-colors duration-300 hover:text-foreground"
-        >
-          Let&rsquo;s talk &rarr;
+      <FadeUp className="work-cta">
+        <p>Working on something that needs to be remembered?</p>
+        <a className="text-link" href="#contact">
+          Let&rsquo;s talk →
         </a>
       </FadeUp>
     </section>

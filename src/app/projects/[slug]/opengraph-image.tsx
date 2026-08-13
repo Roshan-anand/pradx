@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getProject, projects, SITE } from "@/lib/site";
+import { getProject, projects } from "@/lib/projects";
 
 export const alt = "PRADXCLUSIVE® — selected work.";
 export const size = { width: 1200, height: 630 };
@@ -18,7 +18,7 @@ export default async function ProjectOpenGraphImage({
   const project = getProject(slug);
 
   const category = (project?.category ?? "Selected work").toUpperCase();
-  const name = project?.name ?? "PRADXCLUSIVE®";
+  const name = project?.title ?? "PRADXCLUSIVE®";
   const disciplines =
     project?.disciplines ?? "Brand identity, websites, content and campaigns";
 
@@ -48,9 +48,7 @@ export default async function ProjectOpenGraphImage({
         }}
       >
         <span>PRADXCLUSIVE®</span>
-        <span>
-          {SITE.projectType} · {SITE.year}
-        </span>
+        <span>{project?.year ?? "2026"}</span>
       </div>
 
       {/* Middle */}
@@ -128,7 +126,7 @@ export default async function ProjectOpenGraphImage({
           textTransform: "uppercase",
         }}
       >
-        <span>Self-directed brand world</span>
+        <span>Selected studio work</span>
         <span>pradxclusive.com</span>
       </div>
     </div>,

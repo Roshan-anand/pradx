@@ -54,7 +54,7 @@ export default function TermsPage() {
           ],
         }}
       />
-      <SiteHeader solid minimal />
+      <SiteHeader solid />
       <main className="mx-auto max-w-[800px] px-10 py-[100px] max-[600px]:px-6 max-[600px]:py-16">
         <div className="mb-4 text-[11px] tracking-[0.2em] text-label">
           LEGAL

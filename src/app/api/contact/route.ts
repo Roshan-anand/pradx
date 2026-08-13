@@ -5,7 +5,7 @@ import { writeToSheet } from "@/lib/google-sheets";
 import { retry } from "@/lib/retry";
 import { leadInquirySchema } from "@/lib/schema";
 
-// Request body mirrors the contact form fields (src/components/contact-form.tsx).
+// Request body mirrors the contact form fields (src/components/sections/contact.tsx).
 type LeadInquiryBody = z.infer<typeof leadInquirySchema>;
 
 export async function POST(request: Request) {
@@ -46,15 +46,14 @@ export async function POST(request: Request) {
     try {
       await pool.query(
         `INSERT INTO lead_inquiries
-          (name, email, company, industry, service, budget, brief)
-         VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+          (name, email, company, industry, starting_point, brief)
+         VALUES ($1, $2, $3, $4, $5, $6)`,
         [
           lead.name,
           lead.email,
           lead.company ?? null,
           lead.industry,
-          lead.service,
-          lead.budget ?? null,
+          lead["starting-point"],
           lead.brief,
         ],
       );

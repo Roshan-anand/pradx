@@ -26,14 +26,13 @@ export async function writeToSheet(lead: LeadData): Promise<void> {
     lead.email,
     lead.company ?? "",
     lead.industry,
-    lead.service,
-    lead.budget ?? "",
+    lead["starting-point"],
     lead.brief,
   ];
 
   await sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: "Sheet1!A:H",
+    range: "Sheet1!A:G",
     valueInputOption: "RAW",
     requestBody: { values: [row] },
   });
