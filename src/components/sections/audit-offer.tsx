@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Countdown } from "@/components/countdown";
 import { FadeUp } from "@/components/fade-up";
 
 export function AuditOffer() {
@@ -25,11 +24,6 @@ export function AuditOffer() {
         <Link className="button" href="/audit">
           Claim your free brand audit
         </Link>
-      </FadeUp>
-      <FadeUp className="audit-window">
-        <span className="eyebrow">Current review window closes in</span>
-        <Countdown />
-        <p>Monday 00:00 to Sunday 23:59:59 · India Standard Time</p>
       </FadeUp>
     </section>
   );

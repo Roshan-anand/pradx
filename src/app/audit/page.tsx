@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
-import { Countdown } from "@/components/countdown";
 import { SubmitForm } from "@/components/submit-form";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -68,10 +67,6 @@ export default function AuditPage() {
           <span className="capacity">
             5 complimentary brand reviews available each week.
           </span>
-          <div className="audit-page-countdown">
-            <span className="eyebrow">Current review window closes in</span>
-            <Countdown />
-          </div>
         </section>
 
         <section className="audit-form-wrap">
